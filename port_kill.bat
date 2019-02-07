@@ -1,0 +1,1 @@
+for /f "tokens=5" %p in (' netstat -ano ^|find "LISTENING" ^|find "80" ') do taskkill /F /PID %p
