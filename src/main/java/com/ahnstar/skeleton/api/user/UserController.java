@@ -1,4 +1,4 @@
-package com.ahnstar.skeleton.user;
+package com.ahnstar.skeleton.api.user;
 
 import java.util.Map;
 

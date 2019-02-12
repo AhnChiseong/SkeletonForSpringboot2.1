@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+<tiles-definitions>
+	<!-- basic layout -->
+	<definition name="layout-basic" template="/WEB-INF/views/base/layout/basic_layout.jsp">
+		<put-attribute name="header"    value="/WEB-INF/views/base/component/header.jsp" />
+		<put-attribute name="gnb" 		value="/WEB-INF/views/base/component/gnb.jsp" />
+  		<put-attribute name="menu" 		value="/WEB-INF/views/base/component/menu.jsp" />
+  		<put-attribute name="footer"    value="/WEB-INF/views/base/component/footer.jsp" />
+  		<put-attribute name="script"    value="/WEB-INF/views/base/component/script.jsp" />
+	</definition>
+	
+	<!-- popup layout -->
+	<definition name="layout-popup" template="/WEB-INF/views/base/layout/popup_layout.jsp">
+		<put-attribute name="header"    value="/WEB-INF/views/base/component/header.jsp" />
+		<put-attribute name="script"    value="/WEB-INF/views/base/component/script.jsp" />
+	</definition>	
+ 	
+ 	<!-- blank layout -->
+	<definition name="layout-blank" template="/WEB-INF/views/base/layout/blank_layout.jsp">
+	</definition>
+	
+ 	<!-- popup pages -->
+ 	<definition name="popup/*/*" extends="layout-popup">
+		<put-attribute name="content"   value="/WEB-INF/views/{1}/{2}.jsp"/>
+ 	</definition>
+ 	<definition name="popup/*/*/*" extends="layout-popup">
+		<put-attribute name="content"   value="/WEB-INF/views/{1}/{2}/{3}.jsp"/>
+ 	</definition>
+ 	
+ 	<!-- blank pages -->
+ 	<definition name="blank/*/*" extends="layout-blank">
+		<put-attribute name="content"   value="/WEB-INF/views/{1}/{2}.jsp"/>
+ 	</definition>
+ 	<definition name="blank/*/*/*" extends="layout-blank">
+		<put-attribute name="content"   value="/WEB-INF/views/{1}/{2}/{3}.jsp"/>
+ 	</definition>
+ 	
+ 	<!-- basic pages -->
+ 	<definition name="*/*" extends="layout-basic">
+		<put-attribute name="content"   value="/WEB-INF/views/{1}/{2}.jsp"/>
+ 	</definition>
+	<definition name="*/*/*" extends="layout-basic">
+		<put-attribute name="content"   value="/WEB-INF/views/{1}/{2}/{3}.jsp"/>
+ 	</definition>
+
+</tiles-definitions>

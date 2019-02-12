@@ -1,4 +1,4 @@
-package com.ahnstar.skeleton.common.interceptor;
+package com.ahnstar.skeleton.config.interceptor;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

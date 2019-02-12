@@ -1,4 +1,4 @@
-package com.ahnstar.skeleton.common.crypto;
+package com.ahnstar.skeleton.utils.crypto;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

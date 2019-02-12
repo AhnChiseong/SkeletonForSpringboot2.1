@@ -1,4 +1,4 @@
-package com.ahnstar.skeleton.config;
+package com.ahnstar.skeleton.config.base;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
@@ -8,8 +8,11 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
+import org.springframework.web.servlet.view.tiles3.TilesView;
+import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
 
-import com.ahnstar.skeleton.common.interceptor.CommonInterceptor;
+import com.ahnstar.skeleton.config.interceptor.CommonInterceptor;
 import com.navercorp.lucy.security.xss.servletfilter.XssEscapeServletFilter;
 
 @Configuration
@@ -31,6 +34,21 @@ public class ContextConfig implements WebMvcConfigurer{
 	@Override
 	public void addCorsMappings(CorsRegistry registry) {
 		registry.addMapping("/**");
+	}
+	
+	@Bean
+	public TilesConfigurer tilesConfigurer() {
+		final TilesConfigurer configurer = new TilesConfigurer();
+		configurer.setDefinitions(new String[] { "classpath:config/tiles2.xml" });
+		configurer.setCheckRefresh(true);
+		return configurer;
+	}
+
+	@Bean
+	public TilesViewResolver tilesViewResolver() {
+		final TilesViewResolver resolver = new TilesViewResolver();
+		resolver.setViewClass(TilesView.class);
+		return resolver;
 	}
 	
 	@Bean

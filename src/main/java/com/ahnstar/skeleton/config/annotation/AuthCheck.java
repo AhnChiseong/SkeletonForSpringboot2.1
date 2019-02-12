@@ -1,4 +1,4 @@
-package com.ahnstar.skeleton.common.annotation;
+package com.ahnstar.skeleton.config.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

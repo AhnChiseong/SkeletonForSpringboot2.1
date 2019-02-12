@@ -1,4 +1,4 @@
-package com.ahnstar.skeleton.common;
+package com.ahnstar.skeleton.greeting;
 
 import java.util.Map;
 
@@ -12,10 +12,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class CommonController {
+public class GreetingController {
 
-	@RequestMapping(value= "/l4_check", method = RequestMethod.GET, produces="text/html")
+	@RequestMapping(value= "/greeting", method = RequestMethod.GET, produces="text/html")
 	public String greeting(@RequestParam Map<String, Object> params, HttpServletRequest request, HttpServletResponse response, Model model) {
-		return "blank/common/l4_check";
+		model.addAttribute("name", "hello world");
+		return "greeting/index";
 	}
 }

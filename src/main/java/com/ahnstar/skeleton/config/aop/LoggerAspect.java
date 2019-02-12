@@ -1,4 +1,4 @@
-package com.ahnstar.skeleton.common.aop;
+package com.ahnstar.skeleton.config.aop;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
