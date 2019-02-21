@@ -13,12 +13,13 @@ spring:
         generate-ddl: false
         show-sql: true
     datasource:
-        #type: org.apache.tomcat.jdbc.pool.DataSource
-        type: com.zaxxer.hikari.HikariDataSource
-        driver-class-name: 'net.sf.log4jdbc.sql.jdbcapi.DriverSpy'
-        url: 'jdbc:log4jdbc:mysql://localhost:3306/db_skeleton?characterEncoding=UTF-8&serverTimezone=UTC'
-        username: ahnstar83
-        password: faith
+        skeleton:
+            #type: org.apache.tomcat.jdbc.pool.DataSource
+            type: com.zaxxer.hikari.HikariDataSource
+            driver-class-name: 'net.sf.log4jdbc.sql.jdbcapi.DriverSpy'
+            jdbc-url: 'jdbc:log4jdbc:mysql://localhost:3306/db_skeleton?characterEncoding=UTF-8&serverTimezone=UTC'
+            username: ahnstar83
+            password: faith
         tomcat:
             max-active: 1
             max-idle: 1
@@ -33,7 +34,17 @@ spring:
         multipart:
             max-file-size: 5MB
             max-request-size: 100MB
-            
+    thymeleaf:
+        cache: false
+    redis:
+        host: '172.16.30.154'
+        port: 6379
+        lettuce:
+            pool:
+                max-active: 10
+                max-idle: 10
+                min-idle: 2
+
 management:
     health: 
         mongo: 
@@ -101,6 +112,7 @@ mail:
     receiver: 
       - csahn@mail2.eduwill.net
       - ahnstar83@gmail.com
+
 
 
 ###################################################################

@@ -1,4 +1,4 @@
-package com.ahnstar.skeleton.config.interceptor;
+package com.ahnstar.skeleton.base.interceptor;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 import ch.qos.logback.classic.Logger;
 
 @Component
-public class CommonInterceptor implements HandlerInterceptor {
+public class BaseInterceptor implements HandlerInterceptor {
 	protected final Logger logger = (Logger) LoggerFactory.getLogger(getClass());
 		
 	@Override
